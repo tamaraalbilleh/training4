@@ -11,9 +11,9 @@ server.use (express.urlencoded ({extended : true}))
 const pg = require ('pg')
 const client = new pg.Client( {
     connectionString: process.env.DATABASE_URL,
-    // ssl: {
-    //   rejectUnauthorized : false
-    // }
+    ssl: {
+      rejectUnauthorized : false
+    }
   });
 const cors = require ('cors')
 server.use(cors());
